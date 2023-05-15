@@ -1,22 +1,25 @@
+package tests;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import tests.BaseTest;
 
 import static constans.PageUrl.*;
 
 public class HerokuappTest extends BaseTest {
 
     @Test
-    public void firstCheckboxUnCheckedTest(){
+    public void firstCheckboxUnCheckedTest() {
         driver.get(HEROKUAPP_PAGE_CHECKBOXES);
         boolean isCheckboxSelected = driver.findElement(By.cssSelector("input:first-child")).isSelected();
         Assert.assertFalse(isCheckboxSelected, "Чек-бокc проставлен");
     }
 
     @Test
-    public void firstCheckboxCheckedTest(){
+    public void firstCheckboxCheckedTest() {
         driver.get(HEROKUAPP_PAGE_CHECKBOXES);
         WebElement checkbox = driver.findElement(By.cssSelector("input:first-child"));
         checkbox.click();
@@ -24,14 +27,14 @@ public class HerokuappTest extends BaseTest {
     }
 
     @Test
-    public void secondCheckboxCheckedTest(){
+    public void secondCheckboxCheckedTest() {
         driver.get(HEROKUAPP_PAGE_CHECKBOXES);
         boolean isCheckboxSelected = driver.findElement(By.cssSelector("input:last-child")).isSelected();
         Assert.assertTrue(isCheckboxSelected, "Чек-бокc не выбран");
     }
 
     @Test
-    public void secondCheckboxUnCheckedTest(){
+    public void secondCheckboxUnCheckedTest() {
         driver.get(HEROKUAPP_PAGE_CHECKBOXES);
         WebElement checkbox = driver.findElement(By.cssSelector("input:last-child"));
         checkbox.click();
@@ -39,15 +42,15 @@ public class HerokuappTest extends BaseTest {
     }
 
     @Test
-    public void enterNumberDataArrowUpTest(){
+    public void enterNumberDataArrowUpTest() {
         driver.get(HEROKUAPP_PAGE_INPUTS);
         WebElement enterNumber = driver.findElement(By.cssSelector("[type = 'number']"));
         enterNumber.sendKeys(Keys.ARROW_UP);
-        Assert.assertEquals(enterNumber.getAttribute("value"),"1");
+        Assert.assertEquals(enterNumber.getAttribute("value"), "1");
     }
 
     @Test
-    public void enterNumberDataArrowDownTest(){
+    public void enterNumberDataArrowDownTest() {
         driver.get(HEROKUAPP_PAGE_INPUTS);
         WebElement enterNumber = driver.findElement(By.cssSelector("[type = 'number']"));
         enterNumber.sendKeys("5");
@@ -56,15 +59,15 @@ public class HerokuappTest extends BaseTest {
     }
 
     @Test
-    public void checkTyposTest(){
+    public void checkTyposTest() {
         driver.get(HEROKUAPP_PAGE_TYPOS);
         WebElement text = driver.findElement(By.xpath("//p[contains (text(), 'Sometime')]"));
-        String expectedResult  = "Sometimes you'll see a typo, other times you won't.";
-        Assert.assertEquals(text.getText(),expectedResult);
+        String expectedResult = "Sometimes you'll see a typo, other times you won't.";
+        Assert.assertEquals(text.getText(), expectedResult);
     }
 
     @Test
-    public void notificationMassageTest(){
+    public void notificationMassageTest() {
         driver.get(HEROKUAPP_PAGE_NOTIFICATION_MASSAGE);
         driver.findElement(By.xpath("//a[text()= 'Click here']")).click();
         WebElement notification = driver.findElement(By.cssSelector("#flash"));
@@ -73,7 +76,7 @@ public class HerokuappTest extends BaseTest {
     }
 
     @Test
-    public void checkFirstNameFirstNameTest(){
+    public void checkFirstNameFirstNameTest() {
         driver.get(HEROKUAPP_PAGE_NOTIFICATION_TABLES);
         WebElement firstName = driver.findElement(By.xpath("//table[@id = 'table1']//td[text() = 'fbach@yahoo.com']" +
                 "/preceding-sibling::td[1]"));
@@ -81,7 +84,7 @@ public class HerokuappTest extends BaseTest {
     }
 
     @Test
-    public void checkFirstNameLastNameTest(){
+    public void checkFirstNameLastNameTest() {
         driver.get(HEROKUAPP_PAGE_NOTIFICATION_TABLES);
         WebElement lastName = driver.findElement(By.xpath("//table[@id = 'table1']//td[text() = 'fbach@yahoo.com']" +
                 "/preceding-sibling::td[2]"));
@@ -89,7 +92,7 @@ public class HerokuappTest extends BaseTest {
     }
 
     @Test
-    public void checkDueTest(){
+    public void checkDueTest() {
         driver.get(HEROKUAPP_PAGE_NOTIFICATION_TABLES);
         WebElement due = driver.findElement(By.xpath("//table[@id = 'table2']//td[text() = 'fbach@yahoo.com']//" +
                 "following-sibling::td"));
@@ -97,7 +100,7 @@ public class HerokuappTest extends BaseTest {
     }
 
     @Test
-    public void checkWebSiteTest(){
+    public void checkWebSiteTest() {
         driver.get(HEROKUAPP_PAGE_NOTIFICATION_TABLES);
         WebElement webSite = driver.findElement(By.xpath("//table[@id = 'table2']//td[text() = 'fbach@yahoo.com']" +
                 "//following-sibling::td[2]"));
