@@ -1,4 +1,4 @@
-package constans.utilites;
+package utilites;
 
 import com.github.javafaker.Faker;
 

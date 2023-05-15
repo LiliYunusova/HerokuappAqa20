@@ -3,11 +3,11 @@ package pages.typos;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
+import pages.BasePageFactory;
 
 import static constans.PageUrl.HEROKUAPP_PAGE_TYPOS;
 
-public class TyposPage extends BasePage{
+public class TyposPage extends BasePageFactory {
 
     @FindBy(xpath = "//p[contains (text(), 'Sometime')]")
     private WebElement text;

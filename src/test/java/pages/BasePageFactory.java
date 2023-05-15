@@ -1,13 +1,14 @@
-package pages.typos;
+package pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-abstract public class BasePage {
+abstract public class BasePageFactory {
     protected WebDriver driver;
 
-    public BasePage(WebDriver driver){
+    public BasePageFactory(WebDriver driver) {
         this.driver = driver;
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
+
 }

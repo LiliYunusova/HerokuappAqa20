@@ -3,12 +3,13 @@ package pages.sortedtables;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import pages.BasePage;
 
 import static constans.PageUrl.HEROKUAPP_PAGE_NOTIFICATION_TABLES;
 
-public class SortedDataTables extends BasePage{
+public class SortedDataTables extends BasePage {
     private By firstName = By.xpath("//table[@id = 'table1']//td[text() = 'fbach@yahoo.com']" +
-                                   "/preceding-sibling::td[1]");
+            "/preceding-sibling::td[1]");
 
     private By lastName = By.xpath("//table[@id = 'table1']//td[text() = 'fbach@yahoo.com']" +
             "/preceding-sibling::td[2]");
@@ -22,28 +23,28 @@ public class SortedDataTables extends BasePage{
         super(driver);
     }
 
-    public SortedDataTables openSortedDataPage(){
+    public SortedDataTables openSortedDataPage() {
         driver.get(HEROKUAPP_PAGE_NOTIFICATION_TABLES);
         return this;
     }
 
-    public String getTextFirstName(){
+    public String getTextFirstName() {
         WebElement textFirstName = driver.findElement(firstName);
         String textFirstName1 = textFirstName.getText();
         return textFirstName1;
     }
 
-    public String getTextLastName(){
+    public String getTextLastName() {
         WebElement textLastName = driver.findElement(lastName);
         return textLastName.getText();
     }
 
-    public String getTextDue(){
+    public String getTextDue() {
         WebElement textDue = driver.findElement(due);
         return textDue.getText();
     }
 
-    public String getTextWebsite(){
+    public String getTextWebsite() {
         WebElement textWebsite = driver.findElement(website);
         return textWebsite.getText();
     }

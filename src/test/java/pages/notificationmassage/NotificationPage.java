@@ -3,10 +3,11 @@ package pages.notificationmassage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import pages.BasePageFactory;
 
 import static constans.PageUrl.HEROKUAPP_PAGE_NOTIFICATION_MASSAGE;
 
-public class NotificationPage extends BasePage{
+public class NotificationPage extends BasePageFactory {
     @FindBy(xpath = "//a[text()= 'Click here']")
     private WebElement clickLink;
 
@@ -16,14 +17,16 @@ public class NotificationPage extends BasePage{
     public NotificationPage(WebDriver driver) {
         super(driver);
     }
-    public void openNotificationPage(){
+
+    public void openNotificationPage() {
         driver.get(HEROKUAPP_PAGE_NOTIFICATION_MASSAGE);
     }
-    public void clickLinkNotification(){
+
+    public void clickLinkNotification() {
         clickLink.click();
     }
 
-    public String notificationText(){
+    public String notificationText() {
         return notification.getText();
     }
 }

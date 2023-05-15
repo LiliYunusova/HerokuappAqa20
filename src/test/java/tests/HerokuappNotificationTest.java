@@ -4,10 +4,10 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.notificationmassage.NotificationPage;
 
-public class HerokuappNotificationTest extends BaseTest{
+public class HerokuappNotificationTest extends BaseTest {
 
     @Test
-    public void notificationMassageTest(){
+    public void notificationMassageTest() {
         NotificationPage notificationPage = new NotificationPage(driver);
         notificationPage.openNotificationPage();
         notificationPage.clickLinkNotification();

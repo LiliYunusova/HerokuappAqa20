@@ -4,17 +4,17 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.checkboxes.CheckboxesPage;
 
-public class HerokuappCheckboxesTest extends BaseTest{
+public class HerokuappCheckboxesTest extends BaseTest {
 
     @Test
-    public void firstCheckboxUnCheckedTest(){
+    public void firstCheckboxUnCheckedTest() {
         CheckboxesPage checkboxesPage = new CheckboxesPage(driver);
         checkboxesPage.openHerokuappCheckboxesPage();
         Assert.assertFalse(checkboxesPage.isCheckbox1Selected(), "Чек бокс проставлен");
     }
 
     @Test
-    public void firstCheckboxCheckedTest(){
+    public void firstCheckboxCheckedTest() {
         CheckboxesPage checkboxesPage = new CheckboxesPage(driver);
         checkboxesPage.openHerokuappCheckboxesPage();
         checkboxesPage.checkbox1Click();
@@ -22,14 +22,14 @@ public class HerokuappCheckboxesTest extends BaseTest{
     }
 
     @Test
-    public void secondCheckboxCheckedTest(){
+    public void secondCheckboxCheckedTest() {
         CheckboxesPage checkboxesPage = new CheckboxesPage(driver);
         checkboxesPage.openHerokuappCheckboxesPage();
         Assert.assertTrue(checkboxesPage.isCheckbox2Selected(), "Чек бокс проставлен");
     }
 
     @Test
-    public void secondCheckboxUnCheckedTest(){
+    public void secondCheckboxUnCheckedTest() {
         CheckboxesPage checkboxesPage = new CheckboxesPage(driver);
         checkboxesPage.openHerokuappCheckboxesPage();
         checkboxesPage.checkbox2Click();
