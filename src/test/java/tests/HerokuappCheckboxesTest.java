@@ -3,17 +3,18 @@ package tests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.checkboxes.CheckboxesPage;
+import utilites.Retry;
 
 public class HerokuappCheckboxesTest extends BaseTest {
 
-    @Test
+    @Test(retryAnalyzer = Retry.class)
     public void firstCheckboxUnCheckedTest() {
         CheckboxesPage checkboxesPage = new CheckboxesPage(driver);
         checkboxesPage.openHerokuappCheckboxesPage();
         Assert.assertFalse(checkboxesPage.isCheckbox1Selected(), "Чек бокс проставлен");
     }
 
-    @Test
+    @Test(retryAnalyzer = Retry.class)
     public void firstCheckboxCheckedTest() {
         CheckboxesPage checkboxesPage = new CheckboxesPage(driver);
         checkboxesPage.openHerokuappCheckboxesPage();
@@ -21,14 +22,14 @@ public class HerokuappCheckboxesTest extends BaseTest {
         Assert.assertTrue(checkboxesPage.isCheckbox1Selected(), "Чек бок не проставлен");
     }
 
-    @Test
+    @Test(retryAnalyzer = Retry.class)
     public void secondCheckboxCheckedTest() {
         CheckboxesPage checkboxesPage = new CheckboxesPage(driver);
         checkboxesPage.openHerokuappCheckboxesPage();
         Assert.assertTrue(checkboxesPage.isCheckbox2Selected(), "Чек бокс проставлен");
     }
 
-    @Test
+    @Test(retryAnalyzer = Retry.class)
     public void secondCheckboxUnCheckedTest() {
         CheckboxesPage checkboxesPage = new CheckboxesPage(driver);
         checkboxesPage.openHerokuappCheckboxesPage();

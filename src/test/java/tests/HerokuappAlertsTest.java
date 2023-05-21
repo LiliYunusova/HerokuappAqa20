@@ -4,10 +4,11 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.alerts.AlertsPage;
+import utilites.Retry;
 
 public class HerokuappAlertsTest extends BaseTest {
 
-    @Test
+    @Test(retryAnalyzer = Retry.class)
     public void javaScriptAlertTest() {
         AlertsPage alertsPage = new AlertsPage(driver);
         alertsPage.openHerokuappAlertsPage();
@@ -15,7 +16,7 @@ public class HerokuappAlertsTest extends BaseTest {
         Assert.assertEquals(actualResult, "I am a JS Alert");
     }
 
-    @Test
+    @Test(retryAnalyzer = Retry.class)
     public void javaScriptConfirmTest() {
         AlertsPage alertsPage = new AlertsPage(driver);
         alertsPage.openHerokuappAlertsPage();
@@ -23,7 +24,7 @@ public class HerokuappAlertsTest extends BaseTest {
         Assert.assertEquals(actualResult, "I am a JS Confirm");
     }
 
-    @Test
+    @Test(retryAnalyzer = Retry.class)
     public void javaScriptPromptTest() {
         AlertsPage alertsPage = new AlertsPage(driver);
         alertsPage.openHerokuappAlertsPage();

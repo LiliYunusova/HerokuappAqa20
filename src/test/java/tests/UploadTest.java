@@ -4,10 +4,11 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.upload.UploadPage;
+import utilites.Retry;
 
 public class UploadTest extends BaseTest {
 
-    @Test
+    @Test(retryAnalyzer = Retry.class)
     public void uploadFileTest() {
         UploadPage uploadPage = new UploadPage(driver);
         uploadPage.openUploadPage();

@@ -3,10 +3,11 @@ package tests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.dropdown.DropDownPage;
+import utilites.Retry;
 
 public class DropDownTest extends BaseTest {
 
-    @Test
+    @Test(retryAnalyzer = Retry.class)
     public void selectFirstOptionTest() {
         DropDownPage dropDownPage = new DropDownPage(driver);
         dropDownPage.openDropDownPage();
@@ -15,7 +16,7 @@ public class DropDownTest extends BaseTest {
         Assert.assertEquals(text, "Option 1");
     }
 
-    @Test
+    @Test(retryAnalyzer = Retry.class)
     public void selectSecondOptionTest() {
         DropDownPage dropDownPage = new DropDownPage(driver);
         dropDownPage.openDropDownPage();
