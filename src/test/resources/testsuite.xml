@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Smoke Test" thread-count="2" parallel="classes">
+    <parameter name="browser" value="chrome"/>
+    <test name="Herokuapp tests">
+        <classes>
+            <class name="tests.DragAndDropTest"/>
+            <class name="tests.DropDownTest"/>
+            <class name="tests.HerokuappAlertsTest"/>
+            <class name="tests.HerokuappCheckboxesTest"/>
+            <class name="tests.HerokuappInputsTest"/>
+            <class name="tests.HerokuappNotificationTest"/>
+            <class name="tests.HerokuappSortedTablesTest"/>
+            <class name="tests.HerokuappTest"/>
+            <class name="tests.HerokuappTyposPage"/>
+            <class name="tests.UploadTest"/>
+        </classes>
+    </test>
+</suite>

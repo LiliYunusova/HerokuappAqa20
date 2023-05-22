@@ -3,9 +3,11 @@ package tests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.typos.TyposPage;
+import utilites.Retry;
 
 public class HerokuappTyposPage extends BaseTest {
-    @Test
+
+    @Test(retryAnalyzer = Retry.class)
     public void checkTyposTest() {
         TyposPage typosPage = new TyposPage(driver);
         typosPage.openTyposPage();
