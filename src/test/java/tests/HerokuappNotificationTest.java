@@ -12,7 +12,7 @@ public class HerokuappNotificationTest extends BaseTest {
         NotificationPage notificationPage = new NotificationPage(driver);
         notificationPage.openNotificationPage();
         notificationPage.clickLinkNotification();
-        String expectedResult = "Action successful\n" +
+        String expectedResult = "Action successfull\n" +
                 "×";
         Assert.assertEquals(notificationPage.notificationText(), expectedResult);
     }

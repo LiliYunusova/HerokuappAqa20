@@ -1,5 +1,7 @@
 package pages.notificationmassage;
 
+import io.qameta.allure.Attachment;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -21,7 +23,7 @@ public class NotificationPage extends BasePageFactory {
     public void openNotificationPage() {
         driver.get(HEROKUAPP_PAGE_NOTIFICATION_MASSAGE);
     }
-
+    @Attachment
     public void clickLinkNotification() {
         clickLink.click();
     }

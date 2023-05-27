@@ -16,7 +16,8 @@ public class TestListener implements ITestListener {
         System.out.println("<<<<<<<Test Failed");
         Object currentClass = result.getInstance();
         WebDriver driver = ((BaseTest) currentClass).getDriver();
-        Screenshot.takeScreenShot(driver);
+        AllureTool allureTool =new AllureTool();
+        allureTool.makeScreenShot(driver);
     }
 
     @Override

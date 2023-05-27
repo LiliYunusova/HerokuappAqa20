@@ -14,6 +14,8 @@
             <class name="tests.HerokuappTest"/>
             <class name="tests.HerokuappTyposPage"/>
             <class name="tests.UploadTest"/>
+            <class name="tests.CheckboxStepsTest"/>
+            <class name="tests.NotificationStepsTest"/>
         </classes>
     </test>
 </suite>
