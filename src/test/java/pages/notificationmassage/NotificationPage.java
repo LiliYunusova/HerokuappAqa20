@@ -23,7 +23,7 @@ public class NotificationPage extends BasePageFactory {
     public void openNotificationPage() {
         driver.get(HEROKUAPP_PAGE_NOTIFICATION_MASSAGE);
     }
-    @Attachment
+
     public void clickLinkNotification() {
         clickLink.click();
     }
